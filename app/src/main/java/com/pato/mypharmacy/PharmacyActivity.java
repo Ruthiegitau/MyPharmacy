@@ -16,6 +16,7 @@ public class PharmacyActivity extends AppCompatActivity {
     @Bind(R.id.locationTextView) TextView mLocationTextView;
     @Bind(R.id.listView) ListView mListView;
     private String [] pharmacys = new String[] {"Brunet", "Costco", "DRUGStore Pharmacy", "Familiprix", "Jean Coutu", "Lawtons", "PharmaChoice", "Pharmaprix", "Pharmasave", "Proxim", "Rexall", "Uniprix", "Value Drug Mart", "Walmart"};
+    private String [] categories = new String[] {"community pharmacy", "hospital pharmacy", "clinical pharmacy", "industrial pharmacy", "compounding pharmacy", "consulting pharmacy", "ambulatory care pharmacy", "regulatory pharmacy", "home care pharmacy"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +28,7 @@ public class PharmacyActivity extends AppCompatActivity {
         mLocationTextView = (TextView) findViewById(R.id.locationTextView);
 
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, pharmacys);
+        MyPharmacyArrayAdapter adapter = new MyPharmacyArrayAdapter(this, android.R.layout.simple_list_item_1, pharmacys, categories); //must match constructor!
         mListView.setAdapter(adapter);
 
 
