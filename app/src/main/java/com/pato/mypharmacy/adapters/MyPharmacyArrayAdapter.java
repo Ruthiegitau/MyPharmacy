@@ -1,4 +1,4 @@
-package com.pato.mypharmacy;
+package com.pato.mypharmacy.adapters;
 
 import android.content.Context;
 import android.widget.ArrayAdapter;
@@ -9,19 +9,19 @@ import android.widget.ArrayAdapter;
 
 public class MyPharmacyArrayAdapter extends ArrayAdapter {
     private Context mContext;
-    private String [] mPharmacys;
+    private String [] mPharmacy;
     private String [] mCategories;
 
     public MyPharmacyArrayAdapter(Context mContext, int resource, String [] mPharmacy, String[] mCategories){
         super(mContext, resource);
         this.mContext = mContext;
-        this.mPharmacys = mPharmacy;
+        this.mPharmacy = mPharmacy;
         this.mCategories = mCategories;
     }
 
     @Override
     public  Object getItem(int position){
-        String Pharmacy = mPharmacys[position];
+        String Pharmacy = mPharmacy[position];
         String Categories = mCategories[position];
         return String.format("%s \nServes great: %s", Pharmacy, Categories);
 
@@ -29,6 +29,6 @@ public class MyPharmacyArrayAdapter extends ArrayAdapter {
 
     @Override
     public int getCount(){
-        return mPharmacys.length;
+        return mPharmacy.length;
     }
 }

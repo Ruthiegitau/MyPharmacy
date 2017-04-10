@@ -1,3 +1,5 @@
+package com.pato.mypharmacy.ui;
+
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -7,11 +9,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.pato.mypharmacy.PharmacyActivity;
 import com.pato.mypharmacy.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+
+/**
+ * Created by Pato on 10/04/2017.
+ */
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.findPharmacyButton) Button mFindPharmacyButton;
@@ -34,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if(v == mFindPharmacyButton) {
             String location = mLocationEditText.getText().toString();
-            Intent intent = new Intent(MainActivity.this, PharmacyActivity.class);
+            Intent intent = new Intent(MainActivity.this, PharmacyListActivity.class);
             intent.putExtra("location", location);
             startActivity(intent);
         }
