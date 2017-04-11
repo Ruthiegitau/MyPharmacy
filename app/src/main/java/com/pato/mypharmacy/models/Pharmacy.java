@@ -16,11 +16,14 @@ public class Pharmacy {
     double mLongitude;
     ArrayList<String> mCategories = new ArrayList<>();
 
-    public Pharmacy() {}
+    public Pharmacy() {
+    }
 
     public Pharmacy(String name, String phone, String website,
-                      double rating, String imageUrl, ArrayList<String> address,
-                      double latitude, double longitude, ArrayList<String> categories) {
+                    double rating, String imageUrl, ArrayList<String> address,
+                    double latitude, double longitude, ArrayList<String> categories) {
+        mImageUrl = getLargeImageUrl(imageUrl);
+
         this.mName = name;
         this.mPhone = phone;
         this.mWebsite = website;
@@ -41,14 +44,14 @@ public class Pharmacy {
     }
 
     public String getWebsite() {
-        return  mWebsite;
+        return mWebsite;
     }
 
     public double getRating() {
         return mRating;
     }
 
-    public String getImageUrl(){
+    public String getImageUrl() {
         return mImageUrl;
     }
 
@@ -66,5 +69,10 @@ public class Pharmacy {
 
     public ArrayList<String> getCategories() {
         return mCategories;
+    }
+
+    public String getLargeImageUrl(String imageUrl) {
+        String largeImageUrl = imageUrl.substring(0, imageUrl.length() - 6).concat("o.jpg");
+        return largeImageUrl;
     }
 }

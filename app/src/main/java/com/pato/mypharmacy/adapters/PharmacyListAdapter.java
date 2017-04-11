@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.pato.mypharmacy.R;
 import com.pato.mypharmacy.models.Pharmacy;
 import com.pato.mypharmacy.ui.PharmacyDetailActivity;
+import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
 
@@ -23,6 +24,8 @@ import butterknife.ButterKnife;
 
 
 public class PharmacyListAdapter extends RecyclerView.Adapter<PharmacyListAdapter.PharmacyViewHolder> {
+    private static final int MAX_WIDTH = 200;
+    private static final int MAX_HEIGHT = 200;
     private ArrayList<Pharmacy> mPharmacy = new ArrayList<>();
     private Context mContext;
 
@@ -73,6 +76,11 @@ public class PharmacyListAdapter extends RecyclerView.Adapter<PharmacyListAdapte
         }
 
         public void bindPharmacy(Pharmacy pharmacy) {
+            Picasso.with(mContext)
+                    .load(pharmacy.getImageUrl())
+                    .resize(MAX_WIDTH, MAX_HEIGHT)
+                    .centerCrop()
+                    .into(mPharmacyImageView);
             mNameTextView.setText(pharmacy.getName());
             mCategoryTextView.setText(pharmacy.getCategories().get(0));
             mRatingTextView.setText("Rating: " + pharmacy.getRating() + "/5");

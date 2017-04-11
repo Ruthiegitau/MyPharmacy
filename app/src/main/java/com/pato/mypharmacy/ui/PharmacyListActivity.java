@@ -1,6 +1,8 @@
 package com.pato.mypharmacy.ui;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +10,7 @@ import android.util.Log;
 
 import com.pato.mypharmacy.R;
 import com.pato.mypharmacy.adapters.PharmacyListAdapter;
+import com.pato.mypharmacy.models.Constants;
 import com.pato.mypharmacy.models.Pharmacy;
 import com.pato.mypharmacy.services.YelpService;
 
@@ -21,6 +24,8 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class PharmacyListActivity extends AppCompatActivity {
+    private SharedPreferences mSharedPreferences;
+    private String mRecentAddress;
     public static final String TAG = PharmacyListActivity.class.getSimpleName();
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
@@ -39,7 +44,18 @@ public class PharmacyListActivity extends AppCompatActivity {
 
         getPharmacy(location);
         Log.d(TAG,"HELLO");
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mRecentAddress = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
+        Log.d("Shared Pref Location", mRecentAddress);
+
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mRecentAddress = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
+        if (mRecentAddress != null) {
+            getPharmacy(mRecentAddress);
+        }
     }
+
+
 
     private void getPharmacy(String location) {
         final YelpService yelpService = new YelpService();
