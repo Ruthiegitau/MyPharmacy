@@ -29,6 +29,7 @@ public class PharmacyListAdapter extends RecyclerView.Adapter<PharmacyListAdapte
     private ArrayList<Pharmacy> mPharmacy = new ArrayList<>();
     private Context mContext;
 
+
     public PharmacyListAdapter(Context context, ArrayList<Pharmacy> pharmacy) {
         mContext = context;
         mPharmacy = pharmacy;

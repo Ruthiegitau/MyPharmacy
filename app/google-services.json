@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "1007886497336",
-    "firebase_url": "https://my-pharmacy-83dcd.firebaseio.com",
-    "project_id": "my-pharmacy-83dcd",
-    "storage_bucket": "my-pharmacy-83dcd.appspot.com"
+    "project_number": "752475892767",
+    "firebase_url": "https://mypharmacy-f74ed.firebaseio.com",
+    "project_id": "mypharmacy-f74ed",
+    "storage_bucket": "mypharmacy-f74ed.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1007886497336:android:bc17d25b7fd8297f",
+        "mobilesdk_app_id": "1:752475892767:android:bc17d25b7fd8297f",
         "android_client_info": {
           "package_name": "com.pato.mypharmacy"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1007886497336-r4rfkkanis2ddb8ccusf70sgg9pu71ng.apps.googleusercontent.com",
+          "client_id": "752475892767-k02bpd3l27d7bk0ga1d4ek7df07q1fj5.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.pato.mypharmacy",
@@ -23,13 +23,13 @@
           }
         },
         {
-          "client_id": "1007886497336-f6plm8ph90gklvp1gm3mmcksa9b229jo.apps.googleusercontent.com",
+          "client_id": "752475892767-6tganajb3i523r7e6fvjj7k915d5s566.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCw3I61CjJ97991374h_0NhVzI4tV1vOTI"
+          "current_key": "AIzaSyAa_7-jm0i-wu7ofbznk4VgY86cMl0Gms0"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "1007886497336-f6plm8ph90gklvp1gm3mmcksa9b229jo.apps.googleusercontent.com",
+              "client_id": "752475892767-6tganajb3i523r7e6fvjj7k915d5s566.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
